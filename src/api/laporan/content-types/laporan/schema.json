@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "laporans",
+  "info": {
+    "singularName": "laporan",
+    "pluralName": "laporans",
+    "displayName": "Laporan",
+    "description": "Laporan kerusakan fasilitas sekolah"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nomor_laporan": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "nama_pelapor": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "sebagai": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Siswa",
+        "Guru"
+      ]
+    },
+    "lokasi": {
+      "type": "string",
+      "required": true
+    },
+    "nama_barang": {
+      "type": "string",
+      "required": true
+    },
+    "deskripsi": {
+      "type": "text",
+      "required": true
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "foto_dari_admin": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "status_laporan": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Menunggu",
+      "enum": [
+        "Menunggu",
+        "Diproses",
+        "Selesai"
+      ]
+    },
+    "catatan_admin": {
+      "type": "text",
+      "required": false
+    },
+    "tanggal_selesai": {
+      "type": "datetime",
+      "required": false
+    },
+    "is_archived": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
