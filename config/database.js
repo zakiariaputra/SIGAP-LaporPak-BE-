@@ -9,6 +9,9 @@ require('dotenv').config({
   path: path.resolve(process.cwd(), '.env.local'),
   override: true,
 });
+console.log('DB_HOST:', env('DATABASE_HOST'));
+console.log('DB_PORT:', env('DATABASE_PORT'));
+
 module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
