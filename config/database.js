@@ -1,12 +1,14 @@
 const path = require('path');
-const dns = require('dns');
-dns.setDefaultResultOrder('ipv4first');
+const net = require('net');
+
+if (net.setDefaultAutoSelectFamily) {
+  net.setDefaultAutoSelectFamily(false);
+}
 
 require('dotenv').config({
   path: path.resolve(process.cwd(), '.env.local'),
   override: true,
 });
-
 module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
