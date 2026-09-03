@@ -1,10 +1,8 @@
 const path = require('path');
 const net = require('net');
-
 if (net.setDefaultAutoSelectFamily) {
   net.setDefaultAutoSelectFamily(false);
 }
-
 require('dotenv').config({
   path: path.resolve(process.cwd(), '.env.local'),
   override: true,
